@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title or post.slug }} - Codex Blog{% endblock %}
+{% block content %}
+<article class="post-full">
+    <header class="post-header">
+        <h1>{{ post.title or post.slug }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ post.date }}">{{ post.date }}</time>
+            {% if post.tags %}
+            <span class="tags">
+                {% for tag in post.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </span>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="post-content">
+        {{ post.html | safe }}
+    </div>
+
+    <nav class="post-nav">
+        {% if posts|length > 1 %}
+        {% set idx = namespace(value=0) %}
+        {% for p in posts %}
+            {% if p.slug == post.slug %}
+                {% set idx.value = loop.index0 %}
+            {% endif %}
+        {% endfor %}
+        {% if idx.value + 1 < posts|length %}
+        <a href="{{ url_for('post', path='/posts/' + posts[idx.value + 1].slug + '/') }}" class="prev">← 上一篇</a>
+        {% endif %}
+        {% if idx.value > 0 %}
+        <a href="{{ url_for('post', path='/posts/' + posts[idx.value - 1].slug + '/') }}" class="next">下一篇 →</a>
+        {% endif %}
+        {% endif %}
+        <a href="{{ url_for('index', path='/') }}" class="home">← 返回首页</a>
+    </nav>
+</article>
+{% endblock %}

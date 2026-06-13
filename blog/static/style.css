@@ -1,0 +1,76 @@
+/* ── Reset & base ──────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:100%;scroll-behavior:smooth}
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;
+    line-height:1.7;color:#1a1a2e;background:#f8f9fc;min-height:100vh
+}
+a{color:#4a6fa5;text-decoration:none;transition:color .2s}
+a:hover{color:#2d4373}
+img{max-width:100%;height:auto}
+code{font-family:"SF Mono","Fira Code","Cascadia Code",monospace;font-size:.9em;background:#e9ecf3;padding:.1em .3em;border-radius:3px}
+pre code{background:transparent;padding:0}
+pre{background:#1e1e2e;color:#cdd6f4;padding:1rem;border-radius:6px;overflow-x:auto;font-size:.9em;margin:1.2em 0}
+
+/* ── Layout ────────────────────────────────────────── */
+.container{max-width:720px;margin:0 auto;padding:0 1.2rem}
+
+/* ── Header ────────────────────────────────────────── */
+.site-header{background:#1a1a2e;color:#fff;padding:1rem 0;position:sticky;top:0;z-index:100}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.site-title{font-size:1.2rem;font-weight:700;color:#fff !important;letter-spacing:-.02em}
+.site-header nav a{color:#a8b2d1;font-size:.9rem;margin-left:1.5rem}
+.site-header nav a:hover{color:#fff}
+
+/* ── Hero ──────────────────────────────────────────── */
+.hero{text-align:center;padding:3rem 0 1rem}
+.hero h1{font-size:2.2rem;font-weight:800;letter-spacing:-.03em;color:#1a1a2e}
+.subtitle{color:#5a5a7a;margin-top:.3rem;font-size:1.05rem}
+
+/* ── Post list ─────────────────────────────────────── */
+.post-list{margin-top:2rem}
+.post-card{background:#fff;border-radius:6px;padding:1.5rem;margin-bottom:1rem;box-shadow:0 1px 3px rgba(0,0,0,.06);transition:box-shadow .2s}
+.post-card:hover{box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.post-card h2{font-size:1.2rem;margin-bottom:.3rem}
+.post-card h2 a{color:#1a1a2e}
+.post-card h2 a:hover{color:#4a6fa5}
+.post-meta{font-size:.85rem;color:#6b7280;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.tags{display:inline-flex;gap:.3rem;flex-wrap:wrap}
+.tag{background:#e9ecf3;color:#4a6fa5;padding:.1em .5em;border-radius:3px;font-size:.8rem}
+.post-excerpt{color:#5a5a7a;font-size:.92rem;line-height:1.6}
+.empty{text-align:center;color:#9ca3af;padding:3rem 0}
+
+/* ── Single post ───────────────────────────────────── */
+.post-full{margin-top:2rem}
+.post-header{margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #e5e7eb}
+.post-header h1{font-size:1.8rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.3rem}
+.post-content{font-size:1rem;line-height:1.8}
+.post-content h2{font-size:1.35rem;margin:1.5em 0 .5em;font-weight:700}
+.post-content h3{font-size:1.15rem;margin:1.2em 0 .4em;font-weight:600}
+.post-content p{margin:0 0 1em}
+.post-content ul,.post-content ol{padding-left:1.5em;margin:0 0 1em}
+.post-content blockquote{border-left:3px solid #4a6fa5;padding:.3em 1em;margin:1em 0;background:#f1f4fb;color:#3a3a5a;border-radius:0 4px 4px 0}
+.post-content a{text-decoration:underline}
+.post-content table{border-collapse:collapse;width:100%;margin:1em 0}
+.post-content th,.post-content td{border:1px solid #d1d5db;padding:.4em .7em;text-align:left}
+.post-content th{background:#e9ecf3;font-weight:600}
+
+/* ── Post nav ──────────────────────────────────────── */
+.post-nav{margin-top:3rem;padding-top:1rem;border-top:1px solid #e5e7eb;display:flex;gap:1rem;flex-wrap:wrap}
+.post-nav a{font-size:.9rem;color:#6b7280}
+.post-nav a:hover{color:#4a6fa5}
+.post-nav .home{margin-left:auto}
+
+/* ── Footer ────────────────────────────────────────── */
+.site-footer{text-align:center;padding:2rem 0;margin-top:3rem;color:#9ca3af;font-size:.85rem;border-top:1px solid #e5e7eb}
+.site-footer a{color:#6b7280}
+.site-footer a:hover{color:#4a6fa5}
+
+/* ── Responsive ────────────────────────────────────── */
+@media(max-width:600px){
+    .hero h1{font-size:1.7rem}
+    .post-header h1{font-size:1.4rem}
+    .site-header .container{flex-direction:column;gap:.5rem}
+    .post-nav{flex-direction:column}
+    .post-nav .home{margin-left:0}
+}

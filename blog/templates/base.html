@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Codex Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/static/style.css') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', path='/static/favicon.svg') }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="{{ url_for('index', path='/') }}" class="site-title">Codex Blog</a>
+            <nav>
+                <a href="{{ url_for('index', path='/') }}">首页</a>
+                <a href="https://github.com/LycauseEyri/codex" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 <a href="https://github.com/LycauseEyri">LycauseEyri</a>. Powered by Codex Blog.</p>
+        </div>
+    </footer>
+</body>
+</html>
